@@ -23,14 +23,14 @@ containers = page_soup.findAll("div",{"class":"caption"})
 
 print("Item found = " + str(len(containers)))
 
-#declare CSV file as output
-out_filename = str(datetime.now()) + ".csv"
-out_fileheader = "Article Name;Price\n"
-csv_file = open(out_filename,"w")
-csv_file.write(out_fileheader)
-
-#parse and put the results into csv file
 try:
+    #declare CSV file as output
+    out_filename = str(datetime.now()) + ".csv"
+    out_fileheader = "Article Name;Price\n"
+    csv_file = open(out_filename,"w")
+    csv_file.write(out_fileheader)
+
+    #parse and put the results into csv file
     i = 1
     for container in containers:
         article_name = container.a.text
